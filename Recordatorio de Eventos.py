@@ -24,10 +24,10 @@ def mostrar_recordatorios(agenda):
     hoy = datetime.date.today()
     if hoy in agenda:
         for evento in agenda[hoy]:
-            print(f"🔔 Recordatorio para hoy: {evento}")
+            print(f"Recordatorio para hoy: {evento}")
             # Notificación de escritorio
             notification.notify(
-                title="📅 Recordatorio de hoy",
+                title="Recordatorio de hoy",
                 message=evento,
                 timeout=10
             )
@@ -61,15 +61,16 @@ while True:
     else:
         agenda[fecha] = [evento]
 
-    print(f"✅ Evento guardado para el {fecha}.\n")
+    print(f"Evento guardado para el {fecha}.\n")
 
 # Guardar agenda al salir
 guardar_agenda(agenda)
 
-print("\n🗓️ Tu agenda de eventos:")
+print("\n Tu agenda de eventos:")
 for fecha in sorted(agenda):
     print(f"{fecha}:")
     for i, evento in enumerate(agenda[fecha], 1):
         print(f"  {i}. {evento}")
 
-print("\n💾 Agenda guardada en 'agenda.json'. ¡Hasta pronto!")
+
+print("\n Agenda guardada en 'agenda.json'. ¡Hasta pronto!")
